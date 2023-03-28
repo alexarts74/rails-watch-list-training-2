@@ -3,7 +3,8 @@
 
   <% @lists.each do |list| %>
     <li><%= list.name %></li>
-    <p><%= link_to "Voir la liste", list_path(list) %></p>
+    <p><%= link_to "Voir la liste", list_path(list), class: "btn btn-primary" %></p>
     <p><%= link_to "Supprimer cette liste", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
   <% end %>
+  <p><%= link_to "Créer une nouvelle liste", new_list_path, class: "btn btn-primary mt-4" %></p>
 </div>
