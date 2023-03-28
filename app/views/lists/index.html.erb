@@ -1,7 +1,9 @@
 <div class="container">
-  <h1>Voici toutes les lists</h1>
+  <h1 class="mb-4">Voici toutes les lists</h1>
 
   <% @lists.each do |list| %>
-    <%= list.name %>
+    <li><%= list.name %></li>
+    <p><%= link_to "Voir la liste", list_path(list) %></p>
+    <p><%= link_to "Supprimer cette liste", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
   <% end %>
 </div>
